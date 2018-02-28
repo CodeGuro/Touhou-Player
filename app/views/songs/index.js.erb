@@ -1,0 +1,8 @@
+$("#p<%=@page%>").html('<%=escape_javascript(render(@songs)) %>')
+var new_songs = <%=raw(@songs.to_json(:except => [:raw, :updated_at, :created_at]))%>
+for(var i in new_songs) {
+  songs[new_songs[i].id] = new_songs[i]
+}
+<%if @page == @total_pages%>
+  $("#p<%=@page%>").height(<%=@songs.count * 21%>)
+<%end%>

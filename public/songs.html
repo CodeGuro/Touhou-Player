@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+Touhou Player
+</title>
+<meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+<link href="/stylesheets/application.css?1273801978" media="screen" rel="stylesheet" type="text/css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
+<script src="/javascripts/jquery.rails.js?1273854418" type="text/javascript"></script>
+<meta name="csrf-param" content="authenticity_token"/>
+<meta name="csrf-token" content="+Jag3eY1RyT+cbZT+HFJSQ17qzScc8hGihaqfk7X&#47;ps="/>
+<link href="/stylesheets/jquery.lightbox-0.5.css?1273920595" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/player.css?1335203938" media="screen" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/jquery.slider.css?1335203938" media="screen" rel="stylesheet" type="text/css" />
+<script src="/javascripts/jwplayer.js?1376141911" type="text/javascript"></script>
+<script src="/javascripts/jquery.lightbox-0.5.js?1207898172" type="text/javascript"></script>
+<script src="/javascripts/jquery.tablednd_0_5.js?1215790280" type="text/javascript"></script>
+<script src="/javascripts/touhou.js?1376141911" type="text/javascript"></script>
+<script src="/javascripts/jquery.slider.js?1335203938" type="text/javascript"></script>
+<script src="/javascripts/jwplayer.js?1376141911" type="text/javascript"></script>
+<script type='text/javascript'>
+  //<![CDATA[
+    jwplayer.key="9rVvQzJG2SckOIaIXCY9pPxY85ncFndp6j9TFw==";
+  //]]>
+</script>
+
+<script type='text/javascript'>
+  //<![CDATA[
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-20311489-1']);
+    _gaq.push(['_trackPageview']);
+    
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  //]]>
+</script>
+</head>
+<body>
+<div id='container'>
+<div id='header'>
+<div id='album_art_div'>
+<a href='/images/default.png'>
+<img height='88' src='/images/default_thumb.png' width='88'>
+</a>
+</div>
+<div id='non_album_art_div'>
+<div id='upper_non'>
+<div id='player_container'>
+<div id='player' style='max-height: 26px; height: 26px; width: 367px;'>
+Loading player...
+</div>
+<script type='text/javascript'>
+  //<![CDATA[
+    var player_width = 367;
+    var player_height = 26;
+    
+    jwplayer("player").setup({
+      file: "/dummy.mp3",
+      'displaytitle': false,
+      'backcolor': 'FF9999',
+      'controlbar': 'bottom',
+      'width': player_width,
+      'height': player_height,
+      //'skin': '/swf/schoon/schoon.xml',
+      'autostart': true
+    });
+    jwplayer("player").setVolume(90)
+    jwplayerLoaded("player")
+    //swfobject.embedSWF("/swf/player.swf", "player", player_width, player_height, "9.0.115", "/swf/expressInstall.swf", flashvars, params, attributes, flashLoaded)
+  //]]>
+</script>
+<div id='player_controls'>
+<a href='' id='next_link'>Next</a>
+<div id='volumetext'>
+Volume
+</div>
+<div id='volumeslider'></div>
+</div>
+</div>
+<table id='current_table'>
+<tr>
+<td>Artist&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td id='current_artist'></td>
+</tr>
+<tr>
+<td>Album</td>
+<td id='current_album'></td>
+</tr>
+<tr>
+<td>Title</td>
+<td id='current_title'></td>
+</tr>
+</table>
+</div>
+<div id='lower_non'>
+<form accept-charset="UTF-8" action="/songs" id="search_form" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+<div id='search_div'>
+<a href='' id='search_link'>Search:</a>
+<input id="search_field" name="search" size="25" type="text" value="" />
+</div>
+</form>
+
+<div class='option_box'>
+After playing:
+<input id="after_stop" name="after" type="radio" value="stop" />
+Stop
+<input checked="checked" id="after_random" name="after" type="radio" value="random" />
+Random
+<input id="after_next" name="after" type="radio" value="next" />
+Next
+</div>
+<div class='option_box'>
+Click:
+<input id="click_queue" name="click" type="radio" value="queue" />
+Queue
+<input checked="checked" id="click_play" name="click" type="radio" value="play" />
+Play
+<input id="click_info" name="click" type="radio" value="info" />
+Info
+</div>
+<div class='option_box'>
+Queue:
+<input checked="checked" id="queue_default" name="queue" type="radio" value="default" />
+Default
+<input id="queue_show" name="queue" type="radio" value="show" />
+Show
+<input id="queue_hide" name="queue" type="radio" value="hide" />
+Hide
+</div>
+<a href='' id='clear_link'>
+Clear Queue
+</a>
+</div>
+</div>
+</div>
+<div id='lists'>
+<div id='playlist'>
+<div class='song_headers'>
+<div class='song_attr song_artist song_header'>Artist</div><div class='song_attr song_date song_header'>Year</div><div class='song_attr song_album song_header'>Album</div><div class='song_attr song_tracknum song_header'>#</div><div class='song_attr song_title song_header'>Title</div><div class='song_attr song_duration song_header'></div>
+</div>
+<div class='list_container' id='song_container'>
+<div id='songs'>
+<div id='loading'>
+<img alt="Loading" src="/images/loading.gif?1273962818" />
+</div>
+</div>
+</div>
+</div>
+<div id='queue'>
+<table class='song_table'>
+<tr class='song_headers'>
+<td class='song_attr song_artist song_header'>Artist</td><td class='song_attr song_date song_header'>Year</td><td class='song_attr song_album song_header'>Album</td><td class='song_attr song_tracknum song_header'>#</td><td class='song_attr song_title song_header'>Title</td><td class='song_attr song_duration song_header'></td>
+</tr>
+</table>
+<div class='list_container' id='queue_container'>
+<div id='queues'>
+<table class='song_table' id='queue_table'></table>
+</div>
+</div>
+</div>
+</div>
+<div class='bottom_info'>
+<a href='http://touhou.kuukunen.net/guide.html'>More info.</a>
+Give feedback
+<a href='http://kuukunen.net/cgi-bin/feedback'>here</a>
+or
+<a href='irc://irc.rizon.net/kuukunen'>irc://irc.rizon.net/kuukunen</a>
+</div>
+<div id='debug'></div>
+
+</div>
+</body>
+</html>

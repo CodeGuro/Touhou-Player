@@ -1,0 +1,8 @@
+var new_songs = <%=raw(@songs.to_json(:except => [:raw, :updated_at, :created_at]))%>
+show_queue()
+for(var i in new_songs) {
+  songs[new_songs[i].id] = new_songs[i]
+  enqueue_load_queue(new_songs[i].id)
+}
+$("#queue_table").tableDnDUpdate();
+setTimeout("reset_clicked()", 100);

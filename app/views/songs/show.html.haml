@@ -1,0 +1,24 @@
+- title "Song"
+
+%p
+  %strong Title:
+  = @song.title
+%p
+  %strong Artist:
+  = @song.artist
+%p
+  %strong Album:
+  = @song.album
+%p
+  %strong Tracknum:
+  = @song.tracknum
+%p
+  %strong Date:
+  = @song.date
+
+%p
+  = link_to "Edit", edit_song_path(@song)
+  |
+  = link_to "Destroy", @song, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", songs_path

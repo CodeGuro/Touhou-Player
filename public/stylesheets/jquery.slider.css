@@ -1,0 +1,30 @@
+﻿.defaultbar
+{
+	margin-top: 10px;
+    height: 5px;
+    background-color: #FFFFFF;
+    border: 1px solid #C9C9C9;
+    position: relative;
+	}
+.defaultbar .jquery-completed
+{
+	height: 3px;
+    background-color: #C9C9C9;
+    top: 1px;
+    left:1px;
+    position: absolute;
+	}
+.defaultbar .jquery-jslider
+{
+	height: 15px;
+    background-color: #FAFAFA;
+    border: 1px solid #C9C9C9;
+    top: -6px;
+    display: block;
+    cursor: pointer;
+    position: absolute;
+	}
+.defaultbar .jquery-jslider-hover
+{
+	background-color: #800000;
+	}

@@ -1,0 +1,32 @@
+queue link on each song
+info link on each song that opens a dialog
+remove settings for click behaviour as unneeded
+interface redesign: queue 
+double clicks and selection with single click and shift+click
+next button in the flash player (replace stop button)
+modify flash player volume control
+...or find or make a better player? (jw player)
+default icon
+make list transparent? (get a loader gif with transparent bg)
+link to song in info box
+link to queue in where?
+link to search in where? a "Link" button on the menu, opening a dialog with text fields for copying these?
+actually scan more accurate date from the mp3s and add that to the info-box and search based on it
+queue with couple of previous songs
+button for "jump to current song"
+config box
+back button = previous search again
+theming? loadable css?
+---
+Low priority possibilities
+---
+secret mp3 dl link?
+secret album art dl link?
+album art gallery per song? (means basically resetting the whole database and generating it again)
+---
+Even lower priority
+---
+users in addition to saving 
+saving and handling queues/playlists
+http://thechriswalker.net/select-drag/
+jQuery UI http://jqueryui.com/

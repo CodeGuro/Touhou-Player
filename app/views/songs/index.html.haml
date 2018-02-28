@@ -1,0 +1,128 @@
+-# title "Songs"
+- content_for :head do
+  = stylesheet_link_tag "jquery.lightbox-0.5"
+  = stylesheet_link_tag "player"
+  = stylesheet_link_tag "jquery.slider"
+  = javascript_include_tag "jwplayer"
+  = javascript_include_tag "jquery.lightbox-0.5"
+  = javascript_include_tag "jquery.tablednd_0_5"
+  = javascript_include_tag "touhou"
+  = javascript_include_tag "jquery.slider"
+  = javascript_include_tag "jwplayer.js"
+  :javascript
+    jwplayer.key="9rVvQzJG2SckOIaIXCY9pPxY85ncFndp6j9TFw==";
+#header
+  #album_art_div
+    %a{:href => '/images/default.png'}
+      %img{:src => '/images/default_thumb.png', :width => 88, :height => 88}
+  #non_album_art_div
+    #upper_non
+      #player_container
+        #player{:style => "max-height: 26px; height: 26px; width: 367px;"}
+          Loading player...
+        :javascript
+          var player_width = 367;
+          var player_height = 26;
+
+          jwplayer("player").setup({
+            file: "/dummy.mp3",
+            'displaytitle': false,
+            'backcolor': 'FF9999',
+            'controlbar': 'bottom',
+            'width': player_width,
+            'height': player_height,
+            //'skin': '/swf/schoon/schoon.xml',
+            'autostart': true
+          });
+          jwplayer("player").setVolume(90)
+          jwplayerLoaded("player")
+          //swfobject.embedSWF("/swf/player.swf", "player", player_width, player_height, "9.0.115", "/swf/expressInstall.swf", flashvars, params, attributes, flashLoaded)
+        #player_controls
+          %a#next_link{:href => ""}<
+            Next
+          #volumetext
+            Volume
+          #volumeslider
+      %table#current_table
+        %tr
+          %td Artist&nbsp;&nbsp;&nbsp;&nbsp;
+          %td#current_artist
+        %tr
+          %td Album
+          %td#current_album
+        %tr
+          %td Title
+          %td#current_title
+    #lower_non
+      = form_tag songs_path, :method => :get, :id => "search_form" do
+        #search_div
+          %a#search_link{:href => ""}<
+            Search: 
+          = text_field_tag :search, "", :id => "search_field", :size => 25
+        -#= submit_tag "Search", :name => nil
+      .option_box
+        After playing:
+        = radio_button_tag "after", "stop"
+        Stop
+        = radio_button_tag "after", "random", true
+        Random
+        = radio_button_tag "after", "next"
+        Next
+      .option_box
+        Click:
+        = radio_button_tag "click", "queue"
+        Queue
+        = radio_button_tag "click", "play", true
+        Play
+        = radio_button_tag "click", "info"
+        Info
+      .option_box
+        Queue:
+        = radio_button_tag "queue", "default", true
+        Default
+        = radio_button_tag "queue", "show"
+        Show
+        = radio_button_tag "queue", "hide"
+        Hide
+      %a#clear_link{:href => ""}
+        Clear Queue
+
+  
+#lists
+  #playlist
+    .song_headers
+      - one_line do
+        .song_attr.song_artist.song_header Artist
+        .song_attr.song_date.song_header Year
+        .song_attr.song_album.song_header Album
+        .song_attr.song_tracknum.song_header #
+        .song_attr.song_title.song_header Title
+        .song_attr.song_duration.song_header
+    #song_container.list_container
+      #songs
+        #loading
+          = image_tag "loading.gif"
+  #queue
+    %table.song_table
+      %tr.song_headers
+        - one_line do
+          %td.song_attr.song_artist.song_header Artist
+          %td.song_attr.song_date.song_header Year
+          %td.song_attr.song_album.song_header Album
+          %td.song_attr.song_tracknum.song_header #
+          %td.song_attr.song_title.song_header Title
+          %td.song_attr.song_duration.song_header
+
+    #queue_container.list_container
+      #queues
+        %table.song_table#queue_table
+
+-#
+  %p= link_to "New Song", new_song_path
+.bottom_info
+  %a{:href => "http://touhou.kuukunen.net/guide.html"} More info.
+  Give feedback
+  %a{:href => "http://kuukunen.net/cgi-bin/feedback"} here
+  or
+  %a{:href => "irc://irc.rizon.net/kuukunen"} irc://irc.rizon.net/kuukunen
+#debug

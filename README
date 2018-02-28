@@ -1,0 +1,34 @@
+# Kuukunen Touhou Player
+
+## About
+
+In this repository is the source code to the Touhou player hosted by Kuukunen
+http://touhou.kuukunen.net/
+
+## Features
+
+
+* Everything is on one page and handled with AJAX
+* Dynamically loading playlist
+* Search
+  * Searching for "alstroemeria records OR eastnewsound" will return everything that has words alstroemeria and records and also everything that has the word eastnewsound anywhere in the tags. Case insensitive, but "OR" has to be upper case.
+* Hideable Queue
+* Queue can be manipulated: Items can be deleted and they can be re-arranged by dragging
+* Album art display. Clicking it won't take you from the page. If an album has multiple pictures, they're distributed between songs.
+* Everything sorted by Album Artist -> Year -> Album -> Track Numer -> Title
+* Settings for some behaviour:
+  * After queue ends, playing stops, picks a random song from the current playlist or moves to the next song on the current playlist
+  * Clicking can put a song into the queue (or play if queue and player is empty), play it directly or move information of the clicked field to the search field.
+  * Queue can be hidden, shown or shown when not empty
+* Settings are stored in a session on the server
+* Queue is stored on the server and loaded when opening the page
+* Bunch of fun server-end stuff like caching of playlist parts and query results.
+* Uses: nginx, Ruby on Rails, Phusion Passenger, jQuery, Haml, Sass, JW Player, memcached, PostgreSQL, jQuery lightBox, jQuery Table Drag and Drop plugin, SWFObject, ruby-mp3info and will_paginate
+
+## Feedback
+
+http://kuukunen.net/cgi-bin/feedback
+
+## IRC
+
+irc://irc.rizon.net/kuukunen

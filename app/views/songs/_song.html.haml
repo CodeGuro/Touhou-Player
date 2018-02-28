@@ -1,0 +1,21 @@
+-#.song{:data => {:song_id => song.id}}
+.song{:id => "s"+song.id.to_s, :data => {:song_id => song.id}}<
+  -# one_line do
+  .song_attr.song_artist>= song.artist
+  .song_attr.song_date>= song.date
+  .song_attr.song_album>= song.album
+  .song_attr.song_tracknum>= song.tracknum
+  .song_attr.song_title>= song.title
+  .song_attr.song_duration>= song.duration
+
+-#
+  %tr
+    %td= song.title
+    %td= song.artist
+    %td= song.album
+    %td= song.tracknum
+    %td= song.date
+  -#
+    %td= link_to 'Show', song
+    %td= link_to 'Edit', edit_song_path(song)
+    %td= link_to 'Destroy', song, :confirm => 'Are you sure?', :method => :delete

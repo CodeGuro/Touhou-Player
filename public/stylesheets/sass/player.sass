@@ -1,0 +1,269 @@
+$textc: #F55
+$playlistbg: #550000
+$songbg: #500
+$headerbg: #800
+$attrbg: #700
+$headersbg: #600
+
+$playlistw: 49%
+
+body
+  background-color: black
+  color: $textc
+
+#header
+  white-space: nowrap
+
+#container
+  width: auto
+  margin: 10px 0.3%
+  background: #fff
+  padding: 5px 0.5%
+  border: solid 1px black
+  background: #210000 url('/images/bg.png') repeat-x left top
+  height: 630px
+
+#album_art_div
+  display: inline-block
+  float:left
+
+#album_art_div > img
+  width: 88px
+  height: 88px
+
+#non_album_art_div
+  display: inline-block
+
+#lists
+
+#player_container
+  display: inline-block
+  float: left
+  margin-right: 10px
+
+#player_controls
+  display: block
+
+#next_link
+  display: inline-block
+  float: left
+  margin-top: 4px
+  padding: 2px
+  background: #FFFFFF
+  text-decoration: none
+  color: black
+
+#next_link:hover
+  background: #AAAAAA
+  color: black
+
+#volumetext
+  color: white
+  margin-top: 5px
+  margin-left: 12px
+  display: inline-block
+  float: left
+
+#volumeslider
+  display: inline-block
+  float: right
+
+#player
+  display: block
+
+#upper_non
+  height: 70px
+
+#lower_non
+  width: 100%
+
+#current_table
+  display: block
+  display: none
+
+@mixin current_thing
+  display: block
+  overflow: hidden
+  white-space: nowrap
+  cursor: pointer
+
+#current_title
+  @include current_thing
+
+#current_title:hover
+  color: white
+
+#current_artist
+  @include current_thing
+
+#current_artist:hover
+  color: white
+
+#current_album
+  @include current_thing
+
+#current_album:hover
+  color: white
+
+a
+  color: #F99
+a:hover
+  color: white
+
+#playlist
+  border: 1px #200 solid
+  width: $playlistw
+  width: 98%
+  float: left
+
+
+.list_container
+  background-color: $playlistbg
+  margin: 0px
+  padding: 0px
+  height: 500px
+  width: 100%
+  overflow: auto
+  overflow-y: scroll
+  overflow-x: hidden
+
+#queue
+  width: $playlistw
+  border: 1px #200 solid
+  margin-left: 1%
+  float: left
+  display: none
+
+#songs
+  width: 100%
+
+.song_headers
+  margin: 0px
+  padding: 0px
+  background-color: $headersbg
+  overflow: hidden
+  white-space: nowrap
+  margin-right: 17px
+  display: block
+
+
+.song
+  display: block
+  margin: 0px
+  padding: 0px
+  background-color: $songbg
+  width: 100%
+  white-space: nowrap
+  overflow: hidden
+  height: 20px
+  border-top: 1px #611 solid
+  cursor: pointer
+
+.song_playing
+  background-color: lighten($songbg,15%)
+
+.song:hover
+  background-color: lighten($songbg,15%)
+
+.tDnD_whileDrag
+  background-color: lighten($songbg,20%)
+
+.song_attr
+  vertical-align: middle
+  margin: 2px
+  padding: 0px
+  display: inline-block
+  //background-color: $attrbg
+  font-size: 10px
+  height: 15px
+  overflow: hidden
+  white-space: nowrap
+
+.queue_del
+  text-align: center
+  cursor: pointer
+  width: 15px
+
+
+.song_table
+  width: 100%
+  border-spacing: 0px
+
+.song_cell
+  vertical-align: middle
+  margin: 2px
+  padding: 0px
+  font-size: 10px
+  height: 15px
+  overflow: hidden
+  white-space: nowrap
+  background-color: $headerbg
+
+.song_header
+  background-color: $headerbg
+
+.test
+  background-color: $headerbg
+
+.song_artist
+  width: 25%
+
+.song_album
+  width: 25%
+
+.song_tracknum
+  text-align: right
+  width: 4%
+
+.song_date
+  width: 6%
+
+.song_title
+  width: 30%
+
+.song_duration
+  text-align: right
+  width: 6%
+  
+#search_div
+  padding-bottom: 6px
+  display: inline-block
+  float: left
+
+#search_field
+  background-color: black
+  color: white
+  border: 1px #333 solid
+  margin-right: 10px
+
+.option_box
+  font-size: 0.8em
+  padding: 2px 4px
+  margin: 0px
+  margin-left: 0px
+  display: inline-block
+  border: 1px #333 solid
+
+.loader
+  margin: 180px 47%
+
+#loading img
+  padding: 0px 0px
+  margin: 10px 47%
+
+.page
+  height: 840px
+  width: 100%
+
+.bottom_info
+  padding-top: 7px
+  //background-color: $attrbg
+  display: inline-block
+  font-size: 10px
+
+.song_active
+  background-color: lighten($songbg,30%)
+
+.song_active:hover
+  background-color: lighten($songbg,30%)
+

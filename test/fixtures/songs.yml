@@ -1,0 +1,13 @@
+one:
+  title: MyString
+  artist: MyString
+  album: MyString
+  tracknum: 1
+  date: MyString
+
+two:
+  title: MyString
+  artist: MyString
+  album: MyString
+  tracknum: 1
+  date: MyString

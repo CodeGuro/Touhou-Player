@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Touhou Player
+    </title>
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type' />
+    <link href="/stylesheets/application.css?1273801978" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/player.css?1274011078" media="screen" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+      #container {
+        width: 700px;
+        height: auto;
+        margin: 20px auto;
+        padding: 40px;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div id='container'>
+      <h1>Touhou Player</h1>
+      <h2>Features</h2>
+      <ul>
+        <li>Everything is on one page and handled with AJAX</li>
+        <li>Dynamically loading playlist</li>
+        <li>Search</li>
+        <ul>
+          <li>Searching for "alstroemeria records OR eastnewsound" will return everything that has words alstroemeria and records and also everything that has the word eastnewsound anywhere in the tags. Case insensitive, but "OR" has to be upper case.</li>
+        </ul>
+        <li>Hideable Queue</li>
+        <li>Queue can be manipulated: Items can be deleted and they can be re-arranged by dragging</li>
+        <li>Album art display. Clicking it won't take you from the page. If an album has multiple pictures, they're distributed between songs.</li>
+        <li>Everything sorted by Album Artist -&gt; Year -&gt; Album -&gt; Track Numer -&gt; Title</li>
+        <li>Settings for some behaviour:</li>
+        <ul>
+          <li>After queue ends, playing stops, picks a random song from the current playlist or moves to the next song on the current playlist</li>
+          <li>Clicking can put a song into the queue (or play if queue and player is empty), play it directly or move information of the clicked field to the search field.</li>
+          <li>Queue can be hidden, shown or shown when not empty</li>
+        </ul>
+        <li>Settings are stored in a session on the server</li>
+        <li>Queue is stored on the server and loaded when opening the page</li>
+        <li>Bunch of fun server-end stuff like caching of playlist parts and query results.</li>
+        <li>Uses:
+        <a href="http://nginx.org/">nginx</a>,
+        <a href="http://www.ruby-lang.org/">Ruby</a>
+        <a href="http://rubyonrails.org/">on Rails</a>,
+        <a href="http://www.modrails.com/">Phusion Passenger</a>,
+        <a href="http://jquery.com/">jQuery</a>,
+        <a href="http://haml-lang.com/">Haml</a>,
+        <a href="http://sass-lang.com/">Sass</a>,
+        <a href="http://www.longtailvideo.com/jw-player/">JW Player</a>,
+        <a href="http://memcached.org/">memcached</a>,
+        <a href="http://www.postgresql.org/">PostgreSQL</a>,
+        <a href="http://leandrovieira.com/projects/jquery/lightbox/">jQuery lightBox</a>,
+        <a href="http://www.isocra.com/2008/02/table-drag-and-drop-jquery-plugin/">jQuery Table Drag and Drop plugin</a>,
+        <a href="http://code.google.com/p/swfobject/">SWFObject</a>,
+        <a href="http://ruby-mp3info.rubyforge.org/">ruby-mp3info</a> and
+        <a href="http://wiki.github.com/mislav/will_paginate/">will_paginate</a>
+      </ul>
+    </div>
+  </body>
+</html>
+
